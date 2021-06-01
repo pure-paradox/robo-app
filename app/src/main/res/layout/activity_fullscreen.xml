@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/fullscreenBackgroundColor"
+    android:theme="@style/ThemeOverlay.RobotController.FullscreenContainer"
+    tools:context=".FullscreenActivity"
+    android:keepScreenOn="true">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <VideoView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageButton
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="100dp"
+        android:background="@null"
+        app:srcCompat="@drawable/down" />
+
+    <ImageButton
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="50dp"
+        android:background="@null"
+        app:srcCompat="@drawable/left" />
+
+    <ImageButton
+        android:id="@+id/up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:layout_marginTop="200dp"
+        android:layout_marginStart="100dp"
+        android:background="@null"
+        app:srcCompat="@drawable/up" />
+
+    <ImageButton
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.6"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="140dp"
+        android:background="@null"
+        app:srcCompat="@drawable/right" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_margin="10dp"
+        android:alpha="0.5"
+        android:text="Status" />
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="@style/Widget.Theme.RobotController.ButtonBar.Fullscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/bluetoothButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/stat_sys_data_bluetooth"
+                android:layout_gravity="top|end"
+                android:layout_margin="10dp"
+                android:focusable="true"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/recordButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/presence_video_busy"
+                android:layout_gravity="top|end"
+                android:layout_margin="10dp"
+                android:focusable="true"
+                />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</FrameLayout>
